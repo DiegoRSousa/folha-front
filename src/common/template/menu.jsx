@@ -4,10 +4,10 @@ import MenuTree from './menuTree';
 
 export default props => (
     <ul className='sidebar-menu'>
-        <MenuItem path='#/' label='Dashboard' icon='dashboard' />
-        <MenuItem path='#/' label='Trabalhadores' icon='users' />
+        <MenuItem path='dashboard' label='Dashboard' icon='dashboard' />
+        <MenuItem path='trabalhadores' label='Trabalhadores' icon='users' />
         <MenuTree label="Configurações" icon='gears'>
-            <MenuItem path='#/' label='Parâmtros' icon='gear' />
+            <MenuItem path='parametros' label='Parâmtros' icon='gear' />
         </MenuTree>
     </ul>
 )
