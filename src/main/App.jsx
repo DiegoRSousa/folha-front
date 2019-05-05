@@ -10,7 +10,7 @@ export default props => (
     <div className="wrapper">
         <Header />
         <SideBar />
-        <div class='content-wrapper'>
+        <div className='content-wrapper'>
             <Routes />
         </div>
         <Footer />
