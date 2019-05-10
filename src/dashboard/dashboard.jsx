@@ -19,7 +19,6 @@ class Dashboard extends Component {
         this.props.getSummary()
     }
     
-    
     render() {
         const { quantidadeTrabalhadores, totalSalario} = this.props.summary;
         return (

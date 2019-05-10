@@ -1,5 +1,6 @@
 import axios from 'axios';
-const BASE_URL = 'https://localhost:5001/api';
+import { BASE_URL } from '../common/constants';
+
 
 export function getSummary() {
     const request = axios.get(`${BASE_URL}/sumario`);

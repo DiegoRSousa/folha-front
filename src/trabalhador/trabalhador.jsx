@@ -11,6 +11,8 @@ import TabHeader from '../common/tab/tabHeader';
 import TabContent from '../common/tab/tabContent';
 import {selectTab, showTabs} from '../common/tab/tabActions';
 import List from './trabalhadorList';
+import Form from './trabalhadorForm';
+import { create, update, remove } from './trabalhadorActions';
 
 class Trabalhador extends Component {
     componentWillMount() {
@@ -34,10 +36,18 @@ class Trabalhador extends Component {
                             <TabContent id='tabList'>
                                 <List />                            
                             </TabContent>
-                            <TabContent id='tabCreate'>Cadastrar</TabContent>
-                            <TabContent id='tabUpdate'>Alterar</TabContent>
-                            <TabContent id='tabDelete'>Excluir</TabContent>
-
+                            <TabContent id='tabCreate'>
+                                <Form onSubmit={this.props.create} 
+                                    submitLabel='Incluir' submitClass='primary'/>
+                            </TabContent>
+                            <TabContent id='tabUpdate'>
+                                <Form onSubmit={this.props.update} 
+                                    submitLabel='Alterar' submitClass='info'/>
+                            </TabContent>
+                            <TabContent id='tabDelete'>
+                                <Form onSubmit={this.props.remove} readOnly={true} 
+                                    submitLabel='Deletar' submitClass='danger'/>
+                            </TabContent>
                         </TabsContent>
                     </Tabs>
                 </Content>
@@ -46,5 +56,5 @@ class Trabalhador extends Component {
     }
 }
 
-const mapDispatchToProps = dispatch => bindActionCreators({selectTab, showTabs}, dispatch);
+const mapDispatchToProps = dispatch => bindActionCreators({selectTab, showTabs, create, update, remove}, dispatch);
 export default connect(null, mapDispatchToProps)(Trabalhador);
